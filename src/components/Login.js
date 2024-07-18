@@ -17,6 +17,10 @@ function Login(props) {
         setPassword(e.target.value)
     }
     function login(){
+         if ( !username || !password) {
+            alert("Please fill out all fields.");
+            return;
+        }
         let data = JSON.stringify({
           "username": username,
           "password": password
@@ -49,8 +53,8 @@ function Login(props) {
     return (
         <div>
             <h1>login page</h1>
-            <p>Username <input id={"username"} type={'text'} onChange={usernameHandler}/></p>
-            <p>Password <input id={"password"} type={'password'} onChange={passwordHandler}/></p>
+            <p>Username <input id={"username"} type={'text'}  required={true} onChange={usernameHandler}/></p>
+            <p>Password <input id={"password"} type={'password'}  required={true} onChange={passwordHandler}/></p>
             <p>
                 <button id={"loginbtn"} onClick={login}>Login</button>
             </p>
