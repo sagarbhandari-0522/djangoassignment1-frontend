@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import {useNavigate} from "react-router";
+import {BaseUrl} from "../consistents";
 
 function Register(props) {
     const [firstname, setFirstname] = useState("");
@@ -54,7 +55,7 @@ function Register(props) {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://127.0.0.1:8000//api/users/register/',
+            url: BaseUrl+'users/register/',
             headers: {
                 'Content-Type': 'application/json'
             },
