@@ -27,7 +27,7 @@ function Logout(props) {
         .then((response) => {
           console.log(JSON.stringify(response.data));
            localStorage.removeItem('token');
-           navigate('/login');
+           navigate('/');
 
         })
         .catch((error) => {
