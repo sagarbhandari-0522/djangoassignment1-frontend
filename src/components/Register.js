@@ -28,13 +28,7 @@ function Register(props) {
     function password_confirmationHandler(e) {
         setPassword_confirmation(e.target.value)
     }
-    function validateEmail(email) {
-        // Simple email validation regex
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email || !regex.test(email)) {
-            alert("Please enter a valid email address.");
-        }
-    }
+
     function register() {
          if (!firstname || !lastname || !username || !password || !email || !password_confirmation) {
             alert("Please fill out all fields.");
