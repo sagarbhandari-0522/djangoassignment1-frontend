@@ -65,7 +65,8 @@ function Register(props) {
         axios.request(config)
             .then((response) => {
                 console.log(JSON.stringify(response.data));
-                navigate('/login');
+                 localStorage.setItem('token', response.data.token);
+                navigate('/dashboard');
             })
             .catch((error) => {
                 console.log(error);
