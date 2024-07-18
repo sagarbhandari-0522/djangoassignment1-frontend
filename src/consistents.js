@@ -1,1 +1,1 @@
-export const BaseUrl= "https://djangoassignment1-two.vercel.app/"
+export const BaseUrl= "https://djangoassignment1.vercel.app/"
