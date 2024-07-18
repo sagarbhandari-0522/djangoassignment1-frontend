@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {BaseUrl} from "../consistents";
 import axios from "axios";
+import {useNavigate} from "react-router";
 
 function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState('');
     const [login_status, setLogin_status] = useState("")
-
+    const navigate=useNavigate();
     function usernameHandler(e) {
         setUsername(e.target.value)
     }
@@ -33,11 +34,13 @@ function Login(props) {
         axios.request(config)
         .then((response) => {
           console.log(JSON.stringify(response.data));
-          setLogin_status("Login Success!")
+          localStorage.setItem('token', response.data.token);
+          setLogin_status("Login Success!");
+          navigate('/dashboard');
         })
         .catch((error) => {
             console.log(error);
-          console.log("Username or Password is wrong!");
+            alert("Username or Password is wrong!");
         });
 
 
